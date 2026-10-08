@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!--
+================================================================
+  株式会社２０１９プラス ブランドサイト デザイン案（index.html 単一ファイル）
+  コンセプト：「＋（プラス）は、縦と横が交わる点。」
+    社名の「プラス」から着想。＋の記号は、縦の一本と横の一本が交わったかたち。
+    この会社の仕事を、布を織るように「縦糸」と「横糸」を交差させることとして表現しています。
+      縦糸＝スポーツの現場（スポーツチーム・競技団体・スポーツイベント）
+      横糸＝行政、企業、店舗、結婚式場、暮らしの備え
+    縦と横が交わる一点一点が、ひとつの「＋」になる。
+    布の看板（ファブリック看板）を扱う会社でもあるため、「織り」の比喩は事業とも重なります。
+    ・ヒーロー：縦糸が垂れ、横糸が一段ずつ織り込まれていく布の旗のCanvasアニメーション。
+      織り上がると、布の中央に朱色の「＋」が浮かび、旗は風にゆれる（ポインターが風になる）。
+    ・右端のスクロールレール：一本の縦糸を杼（ひ／シャトル）が下っていき、
+      通り過ぎたセクションの位置に横糸が通って「＋」が増えていく。
+    ※社名の「２０１９」は由来が不明のため、年号などとして解釈していません。
+    ※所在地・地名など土地から着想した要素、代表者のお名前から着想した要素は採用していません。
+  デプロイ：Cloudflare Pages（Direct Upload）にこのファイルをそのままアップロード。
+            ビルド不要。外部依存は Google Fonts と Unsplash 画像のみ。
+
+  ■ 公開前の確認事項（チェックリスト）
+  [ ] 1. 社名の由来（「プラス＝縦と横が交わる点」は本案の解釈。「２０１９」は解釈していません）
+  [ ] 2. 代表者の役職名（株式会社のため「代表取締役」と仮置き）
+  [ ] 3. 設立年月日・資本金・従業員数 … 未確認のため会社概要ではコメントアウト
+  [ ] 4. 業種固有の法令：景品表示法（「破れない」「エコ」等の性能・環境表示の根拠）、
+         食品表示法・食品衛生法（デニッシュパンの保存期間・アレルゲン等の表示。製造元の表示に準拠）、
+         職業安定法（採用情報を掲載する場合の労働条件の明示）
+  [ ] 5. 代表メッセージは草案です。ご本人の確認・修正を経て公開してください
+  [ ] 6. 画像はUnsplashのフリー素材（仮）。実際の看板・パン・イベントの写真への差し替え推奨
+  [ ] 7. OGP画像・favicon・公開URL
+
+  ▼ 確認事項一覧（本文中にも【確認事項】コメントあり）
+  【確認事項】1. キャッチコピー「縦と横を、＋でつなぐ。」・各見出しは仮案です（旧案「スポーツの現場から、新しい“プラス”を。」を改稿）
+  【確認事項】2. 社名の「２０１９」の由来は不明のため、設立年などとして扱っていません。「プラス」の意味づけは推測です
+  【確認事項】3. 英字表記「2019 PLUS」は仮です
+  【確認事項】4. 「メジャースポーツ競技団体」での活用はCSVの記載どおり。具体的な団体名は掲載していません（掲載する場合は許諾をご確認ください）
+  【確認事項】5. ファブリック看板・デニッシュパンの製造元／ブランド名、賞味期限・保存年数、価格、最小ロット以外の条件は未記載
+  【確認事項】6. 「一緒に働く人」節はCSVの採用向けの記載をもとにしています。採用募集の掲載方針（応募導線を設けるか）をご確認ください
+  【確認事項】7. スポーツ事業の各項目の説明はCSVを補足した文です
+  【確認事項】8. 設立・資本金・従業員数は未確認のため非表示
+  【確認事項】9. 画像はUnsplashのフリー素材（仮）。実際の看板・パン・イベントの写真への差し替えを推奨
+  【確認事項】10. 「縦糸＝スポーツの現場／横糸＝行政・企業・暮らし」という見立ては本案の表現です
+  【確認事項】11. 「進め方」の4段階は一般的な流れとしての文案です。実際の進め方と合わせてください
+  【確認事項】12. 代表メッセージは草案。署名欄はお名前を省き、会社概要にのみ記載しています
+  【確認事項】13. 英文の装飾ラベル（Plus／Works／Flow など）は装飾用の仮表記
+  【確認事項】14. 「ペットボトルリサイクル」「洗って繰り返し使える」等の環境・性能表示は、製造元の資料・根拠に沿った表現かご確認ください（景品表示法）
+
+  画像：Unsplash（フリー素材・仮）
+    photo-1430232324554-8f4aebd06683（夕暮れのスタジアム）… 帯写真
+    photo-1552664730-d307ca884978（ホワイトボードの前で話し合うチーム）
+    photo-1431324155629-1a6deb1dec8d（夜のグラウンドの照明）
+    photo-1787754651920-931ee480bf2c（布のガーランド）
+    photo-1786806568394-e9bb9389cf79（天板に並んだデニッシュパン）
+================================================================
+-->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>株式会社２０１９プラス｜縦と横を、＋でつなぐ。スポーツ事業支援・ファブリック看板・防災備蓄パン</title>
+<meta name="description" content="株式会社２０１９プラスは、スポーツチームや競技団体の新規事業立案、スポーツイベントの運営、競技団体と行政をつなぐ仕事と、ペットボトルリサイクルのファブリック看板・防災備蓄用デニッシュパンの販売支援を行う会社です。">
+<meta property="og:title" content="株式会社２０１９プラス｜縦と横を、＋でつなぐ。">
+<meta property="og:description" content="スポーツの現場と、行政・企業・暮らしを交差させる。スポーツ事業支援と、ユニークな商材の販売支援。">
+<meta property="og:type" content="website">
+<!-- 要確認：og:url / og:image は公開ドメイン確定後に設定 -->
+<meta name="theme-color" content="#1A1714">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231A1714'/%3E%3Cpath d='M32 12v40M12 32h40' stroke='%23E2603A' stroke-width='8' stroke-linecap='square'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500&family=IBM+Plex+Mono:wght@400&family=Shippori+Mincho+B1:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --base:#1A1714;        /* 墨の土色：基調 */
+  --base-2:#231F1A;      /* 一段明るい墨 */
+  --base-deep:#131110;   /* 一段深い墨（フッター・会社概要） */
+  --text:#EFE8DD;        /* 再生布の生成り */
+  --mute:#A39889;        /* 麻の灰 */
+  --flag:#E2603A;        /* 旗の朱（アクセント） */
+  --flag-deep:#B8431F;   /* 紙の上の朱 */
+  --weft:#D8C9AE;        /* 横糸の生成り */
+  --line:rgba(239,232,221,.14);
+  --paper:#ECE5D8;       /* 布の生成り（明るい面） */
+  --ink:#221D18;         /* 布の上の墨 */
+  --ink-mute:#685E52;
+  --ink-line:rgba(34,29,24,.16);
+  --serif:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;
+  --cond:"Barlow Condensed","Arial Narrow",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --wrap:min(1160px, 100% - 48px);
+  --header-h:72px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + env(safe-area-inset-top,0px));-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--base);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.95;letter-spacing:.04em;word-break:auto-phrase;text-wrap:pretty;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,p,ol,ul,dl,dd,figure{margin:0}
+ol,ul{padding:0;list-style:none}
+img{max-width:100%;display:block}
+a{color:inherit}
+.nw{display:inline-block}
+.wrap{width:var(--wrap);margin-inline:auto}
+:focus-visible{outline:2px solid var(--flag);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:12px;top:-60px;z-index:200;background:var(--flag);color:var(--base);padding:10px 16px;text-decoration:none;font-weight:700}
+.skip:focus{top:calc(12px + env(safe-area-inset-top,0px))}
+
+/* ---------- Header ---------- */
+.header{position:fixed;inset:0 0 auto 0;z-index:100;padding-top:env(safe-area-inset-top,0px);border-bottom:1px solid transparent;transition:background .4s,border-color .4s,backdrop-filter .4s}
+.header.is-scrolled{background:rgba(26,23,20,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-color:var(--line)}
+.header__in{width:var(--wrap);margin-inline:auto;height:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;line-height:1.1}
+.logo svg{width:30px;height:30px;flex:none}
+.logo__en{display:block;font-family:var(--cond);font-weight:500;font-size:22px;letter-spacing:.1em}
+.logo__en b{font-weight:500;color:var(--flag)}
+.logo__ja{display:block;font-size:10.5px;letter-spacing:.16em;color:var(--mute)}
+.gnav ul{display:flex;gap:clamp(18px,2.4vw,34px)}
+.gnav a{position:relative;display:block;padding:6px 0;text-decoration:none;font-size:13px;letter-spacing:.12em}
+.gnav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--flag);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.gnav a:hover::after,.gnav a:focus-visible::after{transform:scaleX(1)}
+.menu-btn{display:none;background:none;border:0;color:var(--text);width:44px;height:44px;cursor:pointer;position:relative}
+.menu-btn span{position:absolute;left:11px;right:11px;height:1.5px;background:currentColor;transition:transform .3s,opacity .3s}
+.menu-btn span:nth-child(1){top:16px}.menu-btn span:nth-child(2){top:22px}.menu-btn span:nth-child(3){top:28px}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+/* ---------- Rail：一本の縦糸を杼が下り、横糸が通るたびに＋が増える ---------- */
+.rail{position:fixed;right:24px;top:50%;transform:translateY(-50%);height:52vh;width:24px;z-index:90;pointer-events:none}
+.rail__line{position:absolute;left:11px;top:0;bottom:0;width:1px;background:var(--line)}
+.rail__fill{position:absolute;left:11px;top:0;width:1px;height:100%;background:var(--flag);transform-origin:top;transform:scaleY(0)}
+.rail__tick{position:absolute;left:5px;width:13px;height:1px;background:rgba(216,201,174,.4);transition:background .4s,width .4s,left .4s}
+.rail__tick::after{content:"";position:absolute;left:6px;top:-6px;width:1px;height:13px;background:var(--flag);transform:scaleY(0);transition:transform .45s cubic-bezier(.3,1.6,.5,1)}
+.rail__tick.is-passed{background:var(--flag)}
+.rail__tick.is-passed::after{transform:scaleY(1)}
+.rail__mark{position:absolute;left:4px;top:0;width:16px;height:28px;margin-top:-14px;filter:drop-shadow(0 0 6px rgba(226,96,58,.55))}
+.rail__read{position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:18px;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--mute);white-space:nowrap;font-variant-numeric:tabular-nums}
+.rail.on-light .rail__line{background:rgba(34,29,24,.22)}
+.rail.on-light .rail__read{color:var(--ink-mute)}
+.rail.on-light .rail__tick{background:rgba(34,29,24,.3)}
+.rail.on-light .rail__tick.is-passed,.rail.on-light .rail__fill{background:var(--flag-deep)}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:100vh;min-height:100svh;overflow:hidden;background:radial-gradient(120% 90% at 30% 20%,var(--base-2) 0%,var(--base) 62%);isolation:isolate}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:-2}
+.hero__veil{position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(26,23,20,.5) 0%,transparent 20%,transparent 66%,rgba(26,23,20,.9) 100%)}
+.hero__in{position:relative;width:var(--wrap);margin-inline:auto;min-height:100vh;min-height:100svh;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;padding:calc(var(--header-h) + 32px) 0 clamp(56px,9vh,96px)}
+.hero__title{grid-column:2;grid-row:1;writing-mode:vertical-rl;font-family:var(--serif);font-weight:600;font-size:clamp(38px,4.6vw,64px);line-height:1.6;letter-spacing:.22em;margin-right:clamp(16px,4vw,64px);text-shadow:0 2px 24px rgba(26,23,20,.7)}
+.hero__title span{display:block;opacity:0;animation:rise 1.4s cubic-bezier(.22,.7,.2,1) .3s forwards}
+.hero__title span+span{margin-top:2.2em;animation-delay:.7s}
+.hero__title em{font-style:normal;color:var(--flag)}
+.hero__lead{grid-column:1;grid-row:1;align-self:end;max-width:30em;opacity:0;animation:fade 1.4s 1.2s cubic-bezier(.22,.7,.2,1) forwards}
+.hero__en{font-family:var(--cond);font-weight:400;font-size:14px;letter-spacing:.28em;color:var(--flag);text-transform:uppercase;margin-bottom:14px}
+.hero__biz{display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--serif);font-size:15px;letter-spacing:.12em;padding-bottom:12px;margin-bottom:14px;border-bottom:1px solid rgba(226,96,58,.45)}
+.hero__biz li{position:relative;padding-left:16px}
+.hero__biz li::before,.hero__biz li::after{content:"";position:absolute;background:var(--flag)}
+.hero__biz li::before{left:0;top:50%;width:9px;height:1.5px;margin-top:-.75px}
+.hero__biz li::after{left:3.75px;top:50%;width:1.5px;height:9px;margin-top:-4.5px}
+.hero__lead p{font-size:15px;line-height:2.05;color:#D9D0C3}
+.scroll-cue{position:absolute;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;font-family:var(--cond);font-size:12px;letter-spacing:.3em;color:var(--mute);text-decoration:none}
+.scroll-cue i{display:block;width:1px;height:40px;background:linear-gradient(var(--flag),transparent);animation:cue 2.4s ease-in-out infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@keyframes rise{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+@keyframes fade{to{opacity:1}}
+
+/* ---------- Sections / heading (Big Latin + JA side by side) ---------- */
+.sec{position:relative;padding:clamp(96px,14vw,176px) 0}
+.sec-h{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:end;gap:clamp(16px,3vw,36px);margin-bottom:clamp(40px,6vw,72px)}
+.sec-h .en{font-family:var(--cond);font-weight:300;font-size:clamp(48px,7vw,96px);line-height:.9;letter-spacing:.02em;color:var(--flag)}
+.sec-h h2{font-family:var(--serif);font-weight:600;font-size:clamp(22px,2.6vw,32px);letter-spacing:.14em;line-height:1.5;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.sec-lead{max-width:36em;color:#D0C7BA;margin-top:-24px;margin-bottom:clamp(48px,7vw,88px)}
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity 1s cubic-bezier(.22,.7,.2,1),transform 1s cubic-bezier(.22,.7,.2,1)}
+.js .reveal.is-in{opacity:1;transform:none}
+
+/* ---------- Concept ---------- */
+.concept__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(40px,7vw,110px);align-items:center}
+.concept__statement{font-family:var(--serif);font-weight:600;font-size:clamp(24px,2.8vw,36px);line-height:1.7;letter-spacing:.1em;margin-bottom:1.2em}
+.concept__text p{color:#D0C7BA;max-width:32em}
+.concept__text p+p{margin-top:1.2em}
+.word{margin-top:2.4em;padding-top:20px;border-top:1px solid var(--line);display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 22px;align-items:baseline}
+.word dt{font-family:var(--cond);font-weight:400;font-size:44px;line-height:1;color:var(--flag)}
+.word dt small{display:block;font-family:var(--mono);font-size:11px;color:var(--mute);letter-spacing:.1em;margin-top:8px}
+.word dd{font-size:14px;color:var(--mute);line-height:1.9}
+.weave-fig{width:100%;height:auto;display:block;overflow:visible}
+.weave-fig .warp,.weave-fig .weft{fill:none;stroke-width:1.4;stroke-dasharray:1;stroke-dashoffset:1}
+.weave-fig .warp{stroke:var(--text);transition:stroke-dashoffset 1.6s cubic-bezier(.45,.05,.2,1)}
+.weave-fig .weft{stroke:var(--weft);stroke-opacity:.8;transition:stroke-dashoffset 1.6s cubic-bezier(.45,.05,.2,1) 1.1s}
+.weave-fig .warp:nth-of-type(2){transition-delay:.2s}.weave-fig .warp:nth-of-type(3){transition-delay:.4s}
+.weave-fig .weft.w2{transition-delay:1.35s}.weave-fig .weft.w3{transition-delay:1.6s}
+.weave-fig .x{fill:var(--flag);opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.3);transition:opacity .5s,transform .6s cubic-bezier(.3,1.6,.5,1)}
+.weave-fig .x.big{fill:var(--flag)}
+.weave-fig .lbl{font-family:var(--sans);font-size:14px;fill:var(--text);letter-spacing:.08em;opacity:0;transition:opacity .9s 2.4s}
+.weave-fig .lbl.mute{fill:var(--mute)}
+.weave-fig .cap{font-family:var(--mono);font-size:11px;fill:var(--flag);letter-spacing:.1em;opacity:0;transition:opacity .9s 2.6s}
+.weave-fig.is-drawn .warp,.weave-fig.is-drawn .weft{stroke-dashoffset:0}
+.weave-fig.is-drawn .x{opacity:1;transform:scale(1)}
+.weave-fig.is-drawn .lbl,.weave-fig.is-drawn .cap{opacity:1}
+.weave-fig .halo{fill:none;stroke:var(--flag);stroke-width:1;transform-box:fill-box;transform-origin:center;opacity:0}
+.weave-fig.is-drawn .halo{animation:halo 3.2s cubic-bezier(.22,.61,.36,1) 3.4s infinite}
+@keyframes halo{0%{transform:scale(.6);opacity:.7}100%{transform:scale(2.6);opacity:0}}
+
+/* ---------- Photo band ---------- */
+.band{position:relative;height:clamp(280px,44vw,540px);overflow:hidden;background:linear-gradient(135deg,var(--base-2),var(--base))}
+.band img{position:absolute;left:0;top:-9%;width:100%;height:118%;object-fit:cover;filter:saturate(.62) brightness(.62) contrast(1.04);will-change:transform}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,23,20,.7) 0%,rgba(26,23,20,.1) 35%,rgba(26,23,20,.2) 60%,rgba(26,23,20,.88) 100%)}
+.band.is-fallback{background:repeating-linear-gradient(90deg,rgba(216,201,174,.08) 0 1px,transparent 1px 22px),repeating-linear-gradient(0deg,rgba(226,96,58,.07) 0 1px,transparent 1px 22px),var(--base-2)}
+.band p{position:absolute;z-index:1;left:0;right:0;bottom:clamp(32px,6vw,64px);width:var(--wrap);margin-inline:auto;font-family:var(--serif);font-weight:600;font-size:clamp(20px,2.6vw,32px);letter-spacing:.18em;line-height:1.7;text-shadow:0 2px 18px rgba(26,23,20,.8)}
+
+/* ---------- Business ---------- */
+.business{background:var(--base-2)}
+.group{display:flex;align-items:center;gap:14px;font-family:var(--serif);font-size:15px;letter-spacing:.2em;color:var(--weft);margin-bottom:clamp(36px,5vw,56px)}
+.group::after{content:"";flex:1;height:1px;background:var(--line)}
+.biz+.group{margin-top:clamp(88px,12vw,150px)}
+.biz{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(32px,6vw,88px);align-items:center}
+.biz+.biz{margin-top:clamp(72px,10vw,128px)}
+.biz.rev .biz__media{order:2}
+.biz__media{position:relative;aspect-ratio:4/3;overflow:hidden;background:linear-gradient(135deg,#2E2822,var(--base))}
+.biz__media img{width:100%;height:100%;object-fit:cover;filter:saturate(.74) brightness(.88);transform:scale(1.05);transition:transform 2.2s cubic-bezier(.2,.6,.2,1)}
+.biz.is-in .biz__media img{transform:scale(1)}
+.biz:hover .biz__media img{transform:scale(1.03);transition-duration:1.4s}
+.biz__media::before,.biz__media::after{content:"";position:absolute;z-index:1;background:var(--flag)}
+.biz__media::before{left:18px;top:28px;height:2px;width:0;transition:width 1s cubic-bezier(.6,.05,.2,1) .3s}
+.biz__media::after{left:28px;top:18px;width:2px;height:0;transition:height 1s cubic-bezier(.6,.05,.2,1) .6s}
+.biz.is-in .biz__media::before{width:22px}
+.biz.is-in .biz__media::after{height:22px}
+.biz__media.is-fallback{background:repeating-linear-gradient(90deg,rgba(216,201,174,.1) 0 1px,transparent 1px 14px),repeating-linear-gradient(0deg,rgba(216,201,174,.1) 0 1px,transparent 1px 14px),#2E2822}
+.biz__kind{display:block;font-size:13px;letter-spacing:.16em;color:var(--flag)}
+.biz h3{font-family:var(--serif);font-weight:600;font-size:clamp(23px,2.5vw,31px);letter-spacing:.1em;line-height:1.55;margin:10px 0 8px}
+.biz__name{font-size:14px;letter-spacing:.1em;color:var(--mute)}
+.biz__body > p:not(.biz__name){margin-top:18px;color:#D0C7BA;max-width:30em}
+.points{margin-top:20px;display:grid;gap:8px}
+.points li{position:relative;padding-left:24px;font-size:15px}
+.points li::before,.points li::after{content:"";position:absolute;background:var(--flag)}
+.points li::before{left:0;top:.95em;width:11px;height:1.5px;margin-top:-.75px}
+.points li::after{left:4.75px;top:.95em;width:1.5px;height:11px;margin-top:-5.5px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.tags li{font-size:12.5px;letter-spacing:.08em;padding:4px 13px;border:1px solid var(--line);border-radius:999px;color:#DCD3C6}
+
+/* ---------- Process（布の生成り） ---------- */
+.process{background:var(--paper) repeating-linear-gradient(90deg,rgba(34,29,24,.035) 0 1px,transparent 1px 6px);color:var(--ink)}
+.process::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(34,29,24,.03) 0 1px,transparent 1px 6px)}
+.process .sec-h .en{color:var(--flag-deep)}
+.process .sec-h h2{border-color:var(--ink-line)}
+.process .sec-lead{color:var(--ink-mute)}
+.steps{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2.4vw,32px)}
+.steps::before{content:"";position:absolute;left:0;right:0;top:11px;height:1px;background:var(--ink-line)}
+.steps::after{content:"";position:absolute;left:0;top:11px;height:2px;margin-top:-.5px;width:100%;background:var(--flag-deep);transform:scaleX(0);transform-origin:left;transition:transform 2.4s cubic-bezier(.6,.1,.2,1)}
+.steps.is-in::after{transform:scaleX(1)}
+.step{position:relative;padding-top:46px;opacity:.25;transition:opacity .9s cubic-bezier(.22,.7,.2,1)}
+.steps.is-in .step{opacity:1}
+.steps.is-in .step:nth-child(2){transition-delay:.6s}.steps.is-in .step:nth-child(3){transition-delay:1.2s}.steps.is-in .step:nth-child(4){transition-delay:1.8s}
+.step__dot{position:absolute;left:0;top:0;width:23px;height:23px;background:var(--paper);border:1px solid var(--ink-mute);display:grid;place-items:center}
+.step__dot::before,.step__dot::after{content:"";position:absolute;left:50%;top:50%;background:var(--flag-deep);transform:translate(-50%,-50%) scale(0);transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+.step__dot::before{width:13px;height:2px}.step__dot::after{width:2px;height:13px}
+.steps.is-in .step__dot::before,.steps.is-in .step__dot::after{transform:translate(-50%,-50%) scale(1)}
+.steps.is-in .step:nth-child(2) .step__dot::before,.steps.is-in .step:nth-child(2) .step__dot::after{transition-delay:.6s}
+.steps.is-in .step:nth-child(3) .step__dot::before,.steps.is-in .step:nth-child(3) .step__dot::after{transition-delay:1.2s}
+.steps.is-in .step:nth-child(4) .step__dot::before,.steps.is-in .step:nth-child(4) .step__dot::after{transition-delay:1.8s}
+.step__no{font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;color:var(--flag-deep)}
+.step h3{font-family:var(--serif);font-weight:600;font-size:22px;letter-spacing:.16em;margin:6px 0 2px}
+.step__sub{display:block;font-size:12px;letter-spacing:.12em;color:var(--ink-mute);margin-bottom:10px}
+.step p{font-size:14.5px;line-height:1.95;color:#3A322A}
+
+/* ---------- People ---------- */
+.people{background:var(--base)}
+.people__list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.person{padding:8px clamp(20px,3vw,44px);border-left:1px solid var(--line)}
+.person:first-child{padding-left:0;border-left:0}
+.person svg{width:20px;height:20px;margin-bottom:22px}
+.person h3{font-family:var(--serif);font-weight:600;font-size:clamp(20px,2vw,24px);letter-spacing:.14em;line-height:1.6;margin-bottom:14px}
+.person p{color:#D0C7BA;font-size:15px}
+.roles{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:clamp(40px,6vw,64px);padding-top:24px;border-top:1px solid var(--line);font-size:14px;color:var(--mute);letter-spacing:.1em}
+.roles span{border:1px solid rgba(226,96,58,.6);color:var(--text);border-radius:999px;padding:4px 16px;font-size:13px}
+
+/* ---------- Message ---------- */
+.message{background:var(--base-2);overflow:hidden}
+.message::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;background:repeating-linear-gradient(90deg,rgba(216,201,174,.025) 0 1px,transparent 1px 28px)}
+.msg{display:flex;flex-direction:row-reverse;gap:clamp(40px,6vw,90px);justify-content:center;align-items:flex-start;position:relative}
+.msg__title{writing-mode:vertical-rl;font-family:var(--serif);font-weight:600;font-size:clamp(28px,3vw,40px);letter-spacing:.2em;line-height:1.7;flex:none}
+.msg__title small{display:block;font-family:var(--sans);font-weight:400;font-size:13px;letter-spacing:.3em;color:var(--flag);margin-left:1.2em}
+.msg__body{writing-mode:vertical-rl;font-family:var(--serif);font-size:16px;line-height:2.3;letter-spacing:.14em;height:30em;max-width:100%;overflow-x:auto;overflow-y:hidden;display:flex;flex-direction:column}
+.msg__body p{margin:0 0 0 1.6em}
+.msg__body .first{font-size:1.32em;letter-spacing:.18em}
+.msg__sign{margin-top:auto;text-align:end}
+.msg__sign small{display:block;font-family:var(--sans);font-size:13px;color:var(--mute);letter-spacing:.2em}
+
+/* ---------- Company ---------- */
+.company{background:var(--base-deep)}
+.company__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.7fr);gap:clamp(40px,7vw,110px);align-items:start}
+.company__grid .sec-h{grid-template-columns:minmax(0,1fr);margin-bottom:0}
+.profile{width:100%;border-collapse:collapse;font-size:15px}
+.profile th,.profile td{text-align:left;vertical-align:top;padding:22px 0;border-bottom:1px solid var(--line);font-weight:400}
+.profile tr:first-child th,.profile tr:first-child td{border-top:1px solid var(--line)}
+.profile th{width:9em;color:var(--mute);font-size:14px;letter-spacing:.14em;padding-right:24px}
+.profile td li{position:relative;padding-left:1.3em}
+.profile td li::before,.profile td li::after{content:"";position:absolute;background:var(--flag)}
+.profile td li::before{left:0;top:.98em;width:9px;height:1.5px;margin-top:-.75px}
+.profile td li::after{left:3.75px;top:.98em;width:1.5px;height:9px;margin-top:-4.5px}
+
+/* ---------- Footer ---------- */
+.footer{background:var(--base-deep);border-top:1px solid var(--line);padding:64px 0 calc(40px + env(safe-area-inset-bottom,0px))}
+.footer__in{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap}
+.footer__tag{margin-top:18px;font-family:var(--serif);font-weight:600;font-size:clamp(18px,2vw,24px);letter-spacing:.16em}
+.footer nav ul{display:flex;flex-wrap:wrap;gap:10px 24px}
+.footer nav a{font-size:12.5px;letter-spacing:.12em;color:var(--mute);text-decoration:none;transition:color .3s}
+.footer nav a:hover{color:var(--text)}
+.copy{margin-top:40px;font-family:var(--cond);font-size:14px;letter-spacing:.12em;color:var(--mute)}
+
+/* ---------- Responsive ---------- */
+@media (max-width:900px){
+  .concept__grid,.biz,.company__grid{grid-template-columns:minmax(0,1fr)}
+  .biz.rev .biz__media{order:0}
+  .people__list{grid-template-columns:minmax(0,1fr)}
+  .person,.person:first-child{padding:28px 0;border-left:0;border-top:1px solid var(--line)}
+  .steps{grid-template-columns:minmax(0,1fr);gap:0;padding-left:44px}
+  .steps::before,.steps::after{left:11px;right:auto;top:10px;bottom:10px;width:1px;height:auto}
+  .steps::after{width:2px;margin:0 0 0 -.5px;transform:scaleY(0);transform-origin:top}
+  .steps.is-in::after{transform:scaleY(1)}
+  .step{padding:0 0 40px}
+  .step__dot{left:-44px}
+}
+@media (max-width:860px){
+  :root{--header-h:64px}
+  .menu-btn{display:block;z-index:120}
+  .gnav{position:fixed;inset:0;background:rgba(19,17,16,.97);display:grid;place-items:center;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s;padding-top:env(safe-area-inset-top,0px)}
+  .gnav.is-open{opacity:1;visibility:visible}
+  .gnav ul{flex-direction:column;align-items:center;gap:26px}
+  .gnav a{font-family:var(--serif);font-size:20px}
+  .rail{display:none}
+  .msg{flex-direction:column;gap:32px}
+  .msg__title,.msg__body{writing-mode:horizontal-tb;height:auto}
+  .msg__title small{margin:0 0 .6em}
+  .msg__body{line-height:2.1;letter-spacing:.06em;overflow:visible}
+  .msg__body p{margin:0 0 1.4em}
+  .msg__sign{text-align:right}
+}
+@media (max-width:760px){
+  .hero__in{grid-template-columns:minmax(0,1fr);align-content:end;gap:24px;padding-bottom:104px}
+  .hero__title{grid-column:1;grid-row:1;writing-mode:horizontal-tb;margin:0;font-size:clamp(30px,8.6vw,40px);letter-spacing:.08em;line-height:1.5}
+  .hero__title span+span{margin-top:0;padding-left:1em}
+  .hero__lead{grid-row:2}
+  .hero__en{display:none}
+  .hero__biz{font-size:14px;gap:4px 14px}
+  .hero__veil{background:linear-gradient(180deg,rgba(26,23,20,.4) 0%,transparent 14%,transparent 44%,rgba(26,23,20,.9) 64%,rgba(26,23,20,.97) 100%)}
+  .sec-h{grid-template-columns:minmax(0,1fr);gap:10px}
+  .sec-lead{margin-top:-16px}
+}
+@media (max-width:640px){
+  .profile th,.profile td{display:block;width:auto;padding:0}
+  .profile th{padding-top:20px;border-bottom:0}
+  .profile td{padding:4px 0 20px}
+  .profile tr:first-child td{border-top:0}
+  .word{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .hero__title span,.hero__lead{opacity:1;transform:none}
+  .js .reveal{opacity:1;transform:none}
+  .weave-fig .warp,.weave-fig .weft{stroke-dashoffset:0}
+  .weave-fig .x,.weave-fig .lbl,.weave-fig .cap{opacity:1;transform:none}
+  .steps::after{transform:none}
+  .step{opacity:1}
+  .step__dot::before,.step__dot::after{transform:translate(-50%,-50%) scale(1)}
+  .biz__media img{transform:none}
+  .biz__media::before{width:22px}.biz__media::after{height:22px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+
+<header class="header" id="header">
+  <div class="header__in">
+    <a class="logo" href="#top" aria-label="株式会社２０１９プラス トップへ">
+      <!-- 【確認事項】英字表記「2019 PLUS」・ロゴマーク（縦糸と横糸が交わる＋）は仮です -->
+      <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M15 2v26M2 15h26" stroke="#E2603A" stroke-width="5"/><path d="M8 2v26M22 2v26" stroke="#EFE8DD" stroke-opacity=".35" stroke-width="1"/></svg>
+      <span><span class="logo__en">2019 <b>PLUS</b></span><span class="logo__ja">株式会社2019プラス</span></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-controls="gnav" aria-expanded="false" aria-label="メニューを開く"><span></span><span></span><span></span></button>
+    <nav class="gnav" id="gnav" aria-label="メインメニュー">
+      <ul>
+        <li><a href="#concept">名前に込めたこと</a></li>
+        <li><a href="#business">事業内容</a></li>
+        <li><a href="#process">進め方</a></li>
+        <li><a href="#people">一緒に働く人</a></li>
+        <li><a href="#message">代表メッセージ</a></li>
+        <li><a href="#company">会社概要</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- スクロールレール：一本の縦糸を杼（シャトル）が下り、通過したセクションに横糸が通って「＋」が増える -->
+<div class="rail" id="rail" aria-hidden="true">
+  <div class="rail__line"></div>
+  <div class="rail__fill" id="railFill"></div>
+  <svg class="rail__mark" id="railMark" viewBox="0 0 16 28"><path d="M8 0 C13 6 13.5 22 8 28 C2.5 22 3 6 8 0Z" fill="#E2603A"/><rect x="6.5" y="9" width="3" height="10" rx="1.5" fill="#1A1714"/><path d="M8 11v6" stroke="#D8C9AE" stroke-width="1"/></svg>
+  <span class="rail__read" id="railRead">+00</span>
+</div>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top" aria-labelledby="heroTitle">
+    <canvas id="heroCanvas" aria-hidden="true"></canvas>
+    <div class="hero__veil" aria-hidden="true"></div>
+    <div class="hero__in">
+      <!-- 【確認事項】キャッチコピー「縦と横を、＋でつなぐ。」は仮案 -->
+      <h1 class="hero__title" id="heroTitle">
+        <span>縦と横を、</span>
+        <span><em>＋</em>でつなぐ。</span>
+      </h1>
+      <div class="hero__lead">
+        <p class="hero__en" lang="en">Sports, and everything that crosses it.</p>
+        <ul class="hero__biz" aria-label="事業内容">
+          <li>スポーツ事業の立案・運営</li>
+          <li>ファブリック看板</li>
+          <li>防災備蓄用デニッシュパン</li>
+        </ul>
+        <p>株式会社2019プラスは、<span class="nw">スポーツ業界とのつながりを活かした事業支援と、</span><span class="nw">イベントや店舗、防災に役立つ</span><span class="nw">ユニークな商材の販売支援を行う会社です。</span></p>
+      </div>
+    </div>
+    <a class="scroll-cue" href="#concept"><span>SCROLL</span><i aria-hidden="true"></i></a>
+  </section>
+
+  <!-- ============ CONCEPT ============ -->
+  <section class="sec concept" id="concept" data-rail aria-labelledby="conceptTitle">
+    <!-- 【確認事項】2. 社名の「プラス」の意味づけは推測です。「２０１９」は由来不明のため解釈していません -->
+    <!-- 【確認事項】10. 縦糸・横糸の見立ては本案の表現です -->
+    <div class="wrap">
+      <div class="sec-h reveal"><span class="en" lang="en" aria-hidden="true">Plus</span><h2 id="conceptTitle">名前に込めたこと</h2></div>
+      <div class="concept__grid">
+        <div class="concept__text reveal">
+          <p class="concept__statement"><span class="nw">＋は、</span><span class="nw">縦と横が</span><span class="nw">交わったかたち。</span></p>
+          <p>スポーツチームや競技団体という「縦」の流れに、行政や企業、イベント、暮らしの備えという「横」の流れを重ねる。私たちの仕事は、そのふたつが交わる一点をつくることです。</p>
+          <p>布が縦糸と横糸の交わりでできているように、交わりが増えるほど、現場は強く、しなやかになります。スポーツの現場に、ひとつずつ「＋」を足していく。それが、２０１９プラスの名前に込めた考え方です。</p>
+          <dl class="word">
+            <!-- <dt>＋<small>plus</small></dt>
+            <dd>足すこと。そして、縦の一本と横の一本が交わること。交点が多い布ほど、破れにくい。</dd>
+          </dl> -->
+        </div>
+        <figure class="reveal">
+          <svg class="weave-fig" id="weaveFig" data-draw viewBox="0 0 520 440" role="img" aria-labelledby="weaveTitle weaveDesc">
+            <title id="weaveTitle">縦糸と横糸が交わる図</title>
+            <desc id="weaveDesc">縦の三本はスポーツチーム、競技団体、スポーツイベント。横の三本は行政、企業・店舗・式場、暮らしの備え。交わる九つの点すべてに＋の印がつき、中央の交点がいちばん大きく光っている。</desc>
+            <path class="warp" pathLength="1" d="M190 60 V400"/>
+            <path class="warp" pathLength="1" d="M300 60 V400"/>
+            <path class="warp" pathLength="1" d="M410 60 V400"/>
+            <path class="weft w1" pathLength="1" d="M120 150 H480"/>
+            <path class="weft w2" pathLength="1" d="M120 240 H480"/>
+            <path class="weft w3" pathLength="1" d="M120 330 H480"/>
+            <g>
+              <path class="x" style="transition-delay:1.9s" d="M184 148h12v4h-12zM188 144h4v12h-4z"/>
+              <path class="x" style="transition-delay:2s" d="M294 148h12v4h-12zM298 144h4v12h-4z"/>
+              <path class="x" style="transition-delay:2.1s" d="M404 148h12v4h-12zM408 144h4v12h-4z"/>
+              <path class="x" style="transition-delay:2.2s" d="M184 238h12v4h-12zM188 234h4v12h-4z"/>
+              <path class="x" style="transition-delay:2.4s" d="M404 238h12v4h-12zM408 234h4v12h-4z"/>
+              <path class="x" style="transition-delay:2.5s" d="M184 328h12v4h-12zM188 324h4v12h-4z"/>
+              <path class="x" style="transition-delay:2.6s" d="M294 328h12v4h-12zM298 324h4v12h-4z"/>
+              <path class="x" style="transition-delay:2.7s" d="M404 328h12v4h-12zM408 324h4v12h-4z"/>
+              <circle class="halo" cx="300" cy="240" r="16"/>
+              <path class="x big" style="transition-delay:2.9s" d="M282 236h36v8h-36zM296 222h8v36h-8z"/>
+            </g>
+            <text class="lbl" x="190" y="40" text-anchor="middle">チーム</text>
+            <text class="lbl" x="300" y="40" text-anchor="middle">競技団体</text>
+            <text class="lbl" x="410" y="40" text-anchor="middle">イベント</text>
+            <text class="lbl mute" x="108" y="155" text-anchor="end">行政</text>
+            <text class="lbl mute" x="108" y="245" text-anchor="end">企業・店舗</text>
+            <text class="lbl mute" x="108" y="335" text-anchor="end">暮らし</text>
+            <text class="cap" x="300" y="430" text-anchor="middle">VERTICAL × HORIZONTAL = PLUS</text>
+          </svg>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PHOTO BAND ============ -->
+  <!-- 画像：Unsplash（仮）夕暮れのスタジアム。差し替え推奨 -->
+  <div class="band" aria-hidden="true">
+    <img id="bandImg" src="https://images.unsplash.com/photo-1430232324554-8f4aebd06683?auto=format&fit=crop&w=2000&q=70" alt="" loading="lazy" onerror="this.parentNode.classList.add('is-fallback');this.remove()">
+    <!-- 【確認事項】帯のコピーは仮案です -->
+    <p class="reveal"><span class="nw">競技の外側にも、</span><span class="nw">スポーツを支える仕事がある。</span></p>
+  </div>
+
+  <!-- ============ BUSINESS ============ -->
+  <section class="sec business" id="business" data-rail aria-labelledby="bizTitle">
+    <div class="wrap">
+      <div class="sec-h reveal"><span class="en" lang="en" aria-hidden="true">Works</span><h2 id="bizTitle">事業内容</h2></div>
+      <p class="sec-lead reveal">スポーツの現場に近いところで、事業をつくり、当日を支え、行政とつなぐ。あわせて、イベントや店舗、暮らしの備えに役立つユニークな商材を届けます。</p>
+
+      <p class="group reveal">スポーツ事業</p>
+      <!-- 【確認事項】7. 各項目の説明はCSVを補足した文です -->
+      <article class="biz reveal">
+        <div class="biz__media">
+          <!-- 画像：Unsplash（仮）ホワイトボードの前で話し合うチーム -->
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=72" alt="ホワイトボードの前で意見を出し合うチーム" loading="lazy" onerror="this.parentNode.classList.add('is-fallback');this.remove()">
+        </div>
+        <div class="biz__body">
+          <span class="biz__kind">新規事業立案</span>
+          <h3>新しい事業を、<br>現場と描く。</h3>
+          <p class="biz__name">スポーツチーム・競技団体の新規事業立案</p>
+          <p>スポーツ業界との深いつながりを活かし、スポーツチームや競技団体とともに新しい事業の企画を考えます。業界の第一線に近い場所から、現場に合った一手を探ります。</p>
+          <ul class="tags" aria-label="主な対象"><li>スポーツチーム</li><li>競技団体</li></ul>
+        </div>
+      </article>
+
+      <article class="biz rev reveal">
+        <div class="biz__media">
+          <!-- 画像：Unsplash（仮）夜のグラウンドを照らす照明 -->
+          <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1400&q=72" alt="夜のグラウンドを照らす照明と、プレーする選手たち" loading="lazy" onerror="this.parentNode.classList.add('is-fallback');this.remove()">
+        </div>
+        <div class="biz__body">
+          <span class="biz__kind">運営・橋渡し</span>
+          <h3>当日を支え、<br>行政とつなぐ。</h3>
+          <p class="biz__name">スポーツイベントの運営／競技団体と行政をつなぐ仕事</p>
+          <p>スポーツイベントの運営に携わり、当日の現場を支えます。また、競技団体と行政のあいだに立ち、両者をつなぐ役割を担います。縦と横を交差させる、いちばん「プラス」らしい仕事です。</p>
+          <ul class="tags" aria-label="主な内容"><li>スポーツイベントの運営</li><li>競技団体と行政をつなぐ</li></ul>
+        </div>
+      </article>
+
+      <p class="group reveal">商材の販売支援</p>
+      <article class="biz reveal">
+        <div class="biz__media">
+          <!-- 画像：Unsplash（仮）ひもに連なる布の旗。実際のファブリック看板の写真への差し替え推奨 -->
+          <img src="https://images.unsplash.com/photo-1787754651920-931ee480bf2c?auto=format&fit=crop&w=1400&q=72" alt="ひもに連なってはためく色とりどりの布の旗" loading="lazy" onerror="this.parentNode.classList.add('is-fallback');this.remove()">
+        </div>
+        <div class="biz__body">
+          <span class="biz__kind">エコ・ファブリック看板</span>
+          <h3>折りたたんでも、<br>破れない看板。</h3>
+          <p class="biz__name">100％ペットボトルリサイクルのファブリック（布）看板</p>
+          <p>イベントや店舗での活用に有効な、布でできた看板です。</p>
+          <!-- 【確認事項】14. 環境・性能表示は製造元の資料に沿った表現かご確認ください -->
+          <ul class="points">
+            <li>100％ペットボトルリサイクルの素材</li>
+            <li>折りたたんでも破れない</li>
+            <li>洗って繰り返し使えるエコ商材</li>
+          </ul>
+          <!-- 【確認事項】4. 具体的な団体名・式場名は掲載していません -->
+          <ul class="tags" aria-label="活用例"><li>メジャースポーツ競技団体</li><li>イベント</li><li>店舗</li><li>結婚式場の等身大パネル</li></ul>
+          <p>結婚式場では、ウェルカムボードに代わる等身大パネルとしても活用されています。</p>
+        </div>
+      </article>
+
+      <article class="biz rev reveal">
+        <div class="biz__media">
+          <!-- 画像：Unsplash（仮）天板に並んだデニッシュパン。実際の商品写真への差し替え推奨 -->
+          <img src="https://images.unsplash.com/photo-1786806568394-e9bb9389cf79?auto=format&fit=crop&w=1400&q=72" alt="天板に並んだ焼きたてのデニッシュパン" loading="lazy" onerror="this.parentNode.classList.add('is-fallback');this.remove()">
+        </div>
+        <div class="biz__body">
+          <span class="biz__kind">防災備蓄</span>
+          <h3>備えに、<br>ひとつの絵柄を。</h3>
+          <p class="biz__name">1個からオリジナルデザインを施せる防災備蓄用デニッシュパン</p>
+          <!-- 【確認事項】5. 保存期間・製造元・価格は未記載です -->
+          <p>防災備蓄用のデニッシュパンに、1個からオリジナルのデザインを施せます。備えを、配る楽しみや伝えるきっかけに変える商材です。</p>
+          <ul class="points">
+            <li>防災備蓄用のデニッシュパン</li>
+            <li>1個からオリジナルデザインに対応</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section class="sec process" id="process" data-rail data-light aria-labelledby="processTitle">
+    <!-- 【確認事項】11. 進め方の4段階は一般的な流れとしての文案（実際の手順なので番号を使用） -->
+    <div class="wrap">
+      <div class="sec-h reveal"><span class="en" lang="en" aria-hidden="true">Flow</span><h2 id="processTitle">進め方</h2></div>
+      <p class="sec-lead reveal">縦糸を張り、横糸を通す。現場の声を聴くところから、交わる一点をつくるまで。</p>
+      <ol class="steps" id="steps">
+        <li class="step"><span class="step__dot" aria-hidden="true"></span><span class="step__no">01</span><h3>聴く</h3><span class="step__sub">現場を知る</span><p>チームや団体、企業の方のお話を伺い、いま何が求められているかを確かめます。</p></li>
+        <li class="step"><span class="step__dot" aria-hidden="true"></span><span class="step__no">02</span><h3>描く</h3><span class="step__sub">企画・提案</span><p>事業の企画やイベントの組み立て、商材の使い方を、目的に合わせて描きます。</p></li>
+        <li class="step"><span class="step__dot" aria-hidden="true"></span><span class="step__no">03</span><h3>つなぐ</h3><span class="step__sub">関係者との調整</span><p>行政や企業、現場の担当者など、必要な相手とのあいだに立って話を進めます。</p></li>
+        <li class="step"><span class="step__dot" aria-hidden="true"></span><span class="step__no">04</span><h3>支える</h3><span class="step__sub">運営・継続</span><p>当日の運営から、その後の活用まで。交わりが続くように、そばで支えます。</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ PEOPLE ============ -->
+  <section class="sec people" id="people" data-rail aria-labelledby="peopleTitle">
+    <!-- 【確認事項】6. CSVの採用向けの記載をもとにしています。応募導線は設けていません -->
+    <div class="wrap">
+      <div class="sec-h reveal"><span class="en" lang="en" aria-hidden="true">People</span><h2 id="peopleTitle">一緒に働く人</h2></div>
+      <p class="sec-lead reveal">業界の第一線に近い場所で仕事ができる環境です。こんな方であれば、営業・事務どちらのポジションでも活躍いただけます。</p>
+      <ul class="people__list">
+        <li class="person reveal">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1v18M1 10h18" stroke="#E2603A" stroke-width="3"/></svg>
+          <h3>新しいものが好き</h3>
+          <p>布の看板も、デザインできる備蓄パンも、まだ知られていない新しい商材です。面白がれることが、いちばんの力になります。</p>
+        </li>
+        <li class="person reveal">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1v18M1 10h18" stroke="#E2603A" stroke-width="3"/></svg>
+          <h3>人と話すのが好き</h3>
+          <p>チーム、団体、行政、企業。縦と横をつなぐ仕事は、人と話すことから始まります。</p>
+        </li>
+        <li class="person reveal">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1v18M1 10h18" stroke="#E2603A" stroke-width="3"/></svg>
+          <h3>知識は、入ってから</h3>
+          <p>専門知識は入社後に身につけられます。はじめから詳しくなくても大丈夫です。</p>
+        </li>
+      </ul>
+      <p class="roles reveal">ポジション <span>営業</span><span>事務</span></p>
+    </div>
+  </section>
+
+  <!-- ============ MESSAGE ============ -->
+  <section class="sec message" id="message" data-rail aria-labelledby="msgTitle">
+    <!-- 要確認：代表メッセージは草案です。ご本人の確認・修正を経て公開してください -->
+    <!-- 【確認事項】12. 代表メッセージは草案。署名欄はお名前を省き、会社概要にのみ記載 -->
+    <div class="wrap msg">
+      <h2 class="msg__title reveal" id="msgTitle"><small>代表メッセージ</small>交わる場所に、<br>立ちつづける。</h2>
+      <div class="msg__body reveal" tabindex="0" aria-label="代表メッセージ本文">
+        <p class="first">スポーツの力は、<br>競技の外側でも生きる。</p>
+        <p>試合の日の熱気も、競技団体の挑戦も、それを支える人や仕組みがあってこそ続いていきます。私たちは、その支える側に立つ会社です。</p>
+        <p>チームや団体と行政、企業と現場。縦と横が出会う場所には、まだ形になっていない可能性があります。そこに一つずつ「＋」を足していくことが、私たちの仕事です。</p>
+        <p>新しいものが好きで、人と話すのが好き。そんな仲間とともに、スポーツの現場と、暮らしの備えの両方に、確かな一点を届けていきます。</p>
+        <p class="msg__sign"><small>代表取締役　河合 洋一</small></p>
+        <!-- 【確認事項】役職名「代表取締役」は仮置き -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPANY ============ -->
+  <section class="sec company" id="company" data-rail aria-labelledby="companyTitle">
+    <div class="wrap company__grid">
+      <div class="sec-h reveal"><span class="en" lang="en" aria-hidden="true">Company</span><h2 id="companyTitle">会社概要</h2></div>
+      <table class="profile reveal">
+        <tbody>
+          <tr><th scope="row">商号</th><td>株式会社2019プラス</td></tr>
+          <tr><th scope="row">代表者</th><td>代表取締役　河合 洋一<!-- 要確認：役職名 --></td></tr>
+          <tr><th scope="row">所在地</th><td>〒167-0033　東京都杉並区清水3-2-20</td></tr>
+          <tr><th scope="row">事業内容</th><td><ul><li>スポーツチーム・競技団体の新規事業立案、スポーツイベントの運営、競技団体と行政をつなぐ業務</li><li>ペットボトルリサイクルのファブリック看板、防災備蓄用デニッシュパン等の販売支援</li></ul></td></tr>
+          <!-- 【確認事項】8. 設立・資本金・従業員数は未確認。確定後にコメントを外して追記
+          <tr><th scope="row">設立</th><td></td></tr>
+          <tr><th scope="row">資本金</th><td></td></tr>
+          <tr><th scope="row">従業員数</th><td></td></tr>
+          -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__in">
+      <div>
+        <a class="logo" href="#top" aria-label="株式会社２０１９プラス トップへ">
+          <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M15 2v26M2 15h26" stroke="#E2603A" stroke-width="5"/><path d="M8 2v26M22 2v26" stroke="#EFE8DD" stroke-opacity=".35" stroke-width="1"/></svg>
+          <span><span class="logo__en">2019 <b>PLUS</b></span><span class="logo__ja">株式会社2019プラス</span></span>
+        </a>
+        <p class="footer__tag">縦と横を、＋でつなぐ。</p>
+      </div>
+      <nav aria-label="フッターメニュー">
+        <ul>
+          <li><a href="#concept">名前に込めたこと</a></li>
+          <li><a href="#business">事業内容</a></li>
+          <li><a href="#process">進め方</a></li>
+          <li><a href="#people">一緒に働く人</a></li>
+          <li><a href="#message">代表メッセージ</a></li>
+          <li><a href="#company">会社概要</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="copy">&copy; <span id="year">2026</span> 株式会社2019プラス</p>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  'use strict';
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---------- Menu ---------- */
+  var btn = document.getElementById('menuBtn'), nav = document.getElementById('gnav');
+  function setMenu(open){
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+    nav.classList.toggle('is-open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (open){ var f = nav.querySelector('a'); if (f) f.focus(); }
+  }
+  btn.addEventListener('click', function(){ setMenu(btn.getAttribute('aria-expanded') !== 'true'); });
+  nav.addEventListener('click', function(e){ if (e.target.closest('a') && nav.classList.contains('is-open')) setMenu(false); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && nav.classList.contains('is-open')){ setMenu(false); btn.focus(); } });
+  matchMedia('(min-width:861px)').addEventListener('change', function(m){ if (m.matches) setMenu(false); });
+
+  /* ---------- Reveal ---------- */
+  var targets = document.querySelectorAll('.reveal, [data-draw], #steps');
+  if ('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        var el = en.target;
+        el.classList.add(el.hasAttribute('data-draw') ? 'is-drawn' : 'is-in');
+        io.unobserve(el);
+      });
+    }, {threshold:.18, rootMargin:'0px 0px -6% 0px'});
+    targets.forEach(function(t){ io.observe(t); });
+  } else {
+    targets.forEach(function(t){ t.classList.add(t.hasAttribute('data-draw') ? 'is-drawn' : 'is-in'); });
+  }
+
+  /* ---------- Header / rail / band ---------- */
+  var header = document.getElementById('header');
+  var rail = document.getElementById('rail'), fill = document.getElementById('railFill'), mark = document.getElementById('railMark'), read = document.getElementById('railRead');
+  var secs = Array.prototype.slice.call(document.querySelectorAll('[data-rail]'));
+  var lights = Array.prototype.slice.call(document.querySelectorAll('[data-light]'));
+  var ticks = [];
+  function layoutTicks(){
+    ticks.forEach(function(t){ t.el.remove(); }); ticks = [];
+    var max = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+    secs.forEach(function(s){
+      var p = Math.min(1, Math.max(0, (s.offsetTop - innerHeight * .3) / max));
+      var el = document.createElement('i'); el.className = 'rail__tick'; el.style.top = (p * 100) + '%';
+      rail.appendChild(el); ticks.push({p:p, el:el});
+    });
+  }
+  var bandImg = document.getElementById('bandImg');
+  function update(){
+    header.classList.toggle('is-scrolled', scrollY > 40);
+    var max = document.documentElement.scrollHeight - innerHeight;
+    var p = max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0;
+    fill.style.transform = 'scaleY(' + p + ')';
+    mark.style.top = (p * 100) + '%';
+    var n = 0;
+    ticks.forEach(function(t){ var on = p >= t.p - .002; t.el.classList.toggle('is-passed', on); if (on) n++; });
+    read.textContent = '+' + (n < 10 ? '0' + n : n);
+    var mid = innerHeight / 2;
+    rail.classList.toggle('on-light', lights.some(function(s){ var r = s.getBoundingClientRect(); return r.top < mid && r.bottom > mid; }));
+    if (!reduce && bandImg && bandImg.parentNode){
+      var r = bandImg.parentNode.getBoundingClientRect();
+      if (r.bottom > 0 && r.top < innerHeight){
+        var k = (r.top + r.height / 2 - innerHeight / 2) / innerHeight;
+        bandImg.style.transform = 'translateY(' + (k * -40).toFixed(1) + 'px)';
+      }
+    }
+  }
+  var ticking = false;
+  addEventListener('scroll', function(){ if (!ticking){ ticking = true; requestAnimationFrame(function(){ update(); ticking = false; }); } }, {passive:true});
+  addEventListener('load', function(){ layoutTicks(); update(); });
+  addEventListener('resize', function(){ layoutTicks(); update(); });
+  layoutTicks(); update();
+
+  /* ---------- Hero canvas：縦糸が垂れ、横糸が織り込まれ、布の旗に＋が浮かぶ ---------- */
+  var cv = document.getElementById('heroCanvas');
+  if (!cv || !cv.getContext) return;
+  var ctx = cv.getContext('2d'), hero = cv.parentElement;
+  var W = 0, H = 0, dpr = 1, running = false, visible = true, raf = 0, t0 = performance.now();
+  var C_TEXT = '239,232,221', C_WEFT = '216,201,174', C_FLAG = '226,96,58';
+  var cols = 0, rows = 0, bx = 0, by = 0, bw = 0, bh = 0, mobile = false, mask = [], P = [], fibers = [];
+  var wind = {x:.5, y:.5, on:false, k:0};
+
+  function build(){
+    mobile = W < 760;
+    if (mobile){ bx = W*.1; by = H*.12; bw = W*.8; bh = Math.min(H*.27, bw*.85); cols = 20; rows = 18; }
+    else { bx = W*.07; by = H*.15; bw = Math.min(W*.44, H*.82); bh = H*.42; cols = 34; rows = 20; }
+    var th = Math.min(bw, bh) * .15, L = Math.min(bw, bh) * .62, cx = bw/2, cy = bh/2;
+    mask = [];
+    for (var j = 0; j < rows - 1; j++){
+      mask[j] = [];
+      for (var i = 0; i < cols - 1; i++){
+        var x = (i + .5) / (cols - 1) * bw - cx, y = (j + .5) / (rows - 1) * bh - cy;
+        mask[j][i] = (Math.abs(x) < th/2 && Math.abs(y) < L/2) || (Math.abs(y) < th/2 && Math.abs(x) < L/2);
+      }
+    }
+    P = []; for (var r = 0; r < rows; r++){ P[r] = []; for (var c = 0; c < cols; c++) P[r][c] = {x:0, y:0, s:0}; }
+    fibers = [];
+    var n = mobile ? 18 : 34;
+    for (var f = 0; f < n; f++) fibers.push({x:Math.random()*W, y:Math.random()*H, r:.6 + Math.random()*1.2, sp:.15 + Math.random()*.35, ph:Math.random()*6.28, len:6 + Math.random()*10});
+  }
+  function clamp(v){ return v < 0 ? 0 : v > 1 ? 1 : v; }
+  function ease(t){ return t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2; }
+  function computeCloth(t){
+    var amp = (mobile ? 9 : 16) * (1 + wind.k * .9), lean = wind.on ? (wind.x - .5) * 18 * wind.k : 0;
+    for (var j = 0; j < rows; j++){
+      var v = j / (rows - 1), hang = Math.pow(v, 1.2);
+      for (var i = 0; i < cols; i++){
+        var u = i / (cols - 1);
+        var ph = u * 5.2 - t * 1.6 + v * 1.4;
+        var dz = Math.sin(ph) * amp * hang + Math.sin(u * 11 - t * 2.3 + v * 3) * amp * .25 * hang;
+        var p = P[j][i];
+        p.x = bx + u * bw + dz * .55 + lean * hang;
+        p.y = by + v * bh + Math.cos(ph) * amp * .18 * hang;
+        p.s = Math.cos(ph) * hang;                       /* 陰影：-1…1 */
+      }
+    }
+  }
+  function draw(t){
+    ctx.clearRect(0, 0, W, H);
+    computeCloth(t);
+    var warpK = ease(clamp((t - .2) / 1.6));
+    /* 竿 */
+    var poleA = clamp(t / .6);
+    ctx.strokeStyle = 'rgba(' + C_TEXT + ',' + (.5 * poleA) + ')'; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(bx - 22, by - 6); ctx.lineTo(bx + bw + 22, by - 6); ctx.stroke();
+    ctx.fillStyle = 'rgba(' + C_FLAG + ',' + poleA + ')';
+    ctx.beginPath(); ctx.arc(bx - 24, by - 6, 3.5, 0, 6.283); ctx.arc(bx + bw + 24, by - 6, 3.5, 0, 6.283); ctx.fill();
+    /* ＋の織り柄（布の面） */
+    var plusK = clamp((t - 3.9) / 1.4);
+    if (plusK > 0){
+      for (var j = 0; j < rows - 1; j++) for (var i = 0; i < cols - 1; i++){
+        if (!mask[j][i]) continue;
+        var a = P[j][i], b = P[j][i+1], c = P[j+1][i+1], d = P[j+1][i];
+        var sh = (a.s + c.s) / 2, al = plusK * (.62 + .3 * sh);
+        ctx.fillStyle = 'rgba(' + C_FLAG + ',' + al.toFixed(3) + ')';
+        ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.lineTo(c.x, c.y); ctx.lineTo(d.x, d.y); ctx.closePath(); ctx.fill();
+      }
+    }
+    /* 縦糸 */
+    var vis = Math.max(1, Math.round(warpK * (rows - 1)));
+    ctx.lineWidth = mobile ? .9 : 1;
+    for (var i2 = 0; i2 < cols; i2++){
+      ctx.beginPath();
+      for (var j2 = 0; j2 <= vis; j2++){ var q = P[j2][i2]; j2 ? ctx.lineTo(q.x, q.y) : ctx.moveTo(q.x, q.y); }
+      var s = P[Math.min(vis, rows-1)][i2].s;
+      ctx.strokeStyle = 'rgba(' + C_TEXT + ',' + (.22 + .22 * (s + 1) / 2).toFixed(3) + ')';
+      ctx.stroke();
+    }
+    /* 横糸（一段ずつ杼が通る） */
+    for (var j3 = 0; j3 < rows; j3++){
+      var k = clamp((t - 1.2 - j3 * .1) / .55);
+      if (k <= 0) break;
+      var upto = k * (cols - 1), dir = j3 % 2 === 0;
+      ctx.beginPath();
+      for (var s2 = 0; s2 <= Math.ceil(upto); s2++){
+        var idx = dir ? s2 : cols - 1 - s2, frac = Math.min(1, upto - (s2 - 1));
+        var pp = P[j3][idx];
+        if (s2 === 0){ ctx.moveTo(pp.x, pp.y); continue; }
+        var prev = P[j3][dir ? idx - 1 : idx + 1];
+        ctx.lineTo(prev.x + (pp.x - prev.x) * frac, prev.y + (pp.y - prev.y) * frac);
+      }
+      ctx.strokeStyle = 'rgba(' + C_WEFT + ',' + (.3 + .25 * (P[j3][0].s + 1) / 2).toFixed(3) + ')';
+      ctx.stroke();
+      if (k < 1){   /* 杼の光 */
+        var hi = dir ? Math.min(cols-1, Math.floor(upto)) : Math.max(0, cols - 1 - Math.floor(upto)), hp = P[j3][hi];
+        var g = ctx.createRadialGradient(hp.x, hp.y, 0, hp.x, hp.y, 14);
+        g.addColorStop(0, 'rgba(' + C_FLAG + ',.9)'); g.addColorStop(1, 'rgba(' + C_FLAG + ',0)');
+        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(hp.x, hp.y, 14, 0, 6.283); ctx.fill();
+      }
+    }
+    /* 漂う繊維 */
+    var fa = clamp((t - 2) / 2) * .5;
+    if (fa > 0) fibers.forEach(function(f){
+      var x = (f.x + t * 14 * f.sp) % (W + 40) - 20, y = f.y + Math.sin(t * f.sp + f.ph) * 12;
+      ctx.strokeStyle = 'rgba(' + C_WEFT + ',' + (fa * (.4 + .6 * Math.sin(t + f.ph) * Math.sin(t + f.ph))).toFixed(3) + ')';
+      ctx.lineWidth = f.r * .6;
+      ctx.beginPath(); ctx.moveTo(x, y); ctx.quadraticCurveTo(x + f.len/2, y - 3, x + f.len, y + 1); ctx.stroke();
+    });
+    wind.k += ((wind.on ? 1 : 0) - wind.k) * .03;
+  }
+  function resize(){
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = cv.clientWidth; H = cv.clientHeight;
+    cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    build();
+  }
+  function loop(now){ if (!running) return; draw((now - t0) / 1000); raf = requestAnimationFrame(loop); }
+  function start(){ if (running || reduce || !visible || document.hidden) return; running = true; raf = requestAnimationFrame(loop); }
+  function stop(){ running = false; cancelAnimationFrame(raf); }
+  function still(){ wind.on = false; wind.k = 0; draw(99); }
+
+  hero.addEventListener('pointermove', function(e){ var r = cv.getBoundingClientRect(); wind.x = (e.clientX - r.left) / r.width; wind.y = (e.clientY - r.top) / r.height; wind.on = true; }, {passive:true});
+  hero.addEventListener('pointerleave', function(){ wind.on = false; });
+
+  resize();
+  if (reduce) still(); else start();
+  var rt, lastW = W, lastH = H;
+  addEventListener('resize', function(){
+    clearTimeout(rt);
+    rt = setTimeout(function(){
+      if (cv.clientWidth === lastW && Math.abs(cv.clientHeight - lastH) < 120) return;   /* スマホのURLバー伸縮では描き直さない */
+      lastW = cv.clientWidth; lastH = cv.clientHeight;
+      resize(); if (!running) still();
+    }, 150);
+  });
+  if ('IntersectionObserver' in window){
+    new IntersectionObserver(function(en){ visible = en[0].isIntersecting; visible ? start() : stop(); }).observe(hero);
+  }
+  document.addEventListener('visibilitychange', function(){ document.hidden ? stop() : start(); });
+})();
+</script>
+</body>
+</html>
